@@ -1,1 +1,114 @@
 ## Compiling the book
+
+```{R setup, include = FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+Below my `sessionInfo()`
+```{R session-info}
+sessionInfo()
+## R version 4.0.2 (2020-06-22)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 20.04.1 LTS
+##
+## Matrix products: default
+## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+##
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+##
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+##
+## loaded via a namespace (and not attached):
+##  [1] rstudioapi_0.11   knitr_1.29        R6_2.4.1          rlang_0.4.7      
+##  [5] fansi_0.4.1       tools_4.0.2       pkgbuild_1.0.8    xfun_0.15        
+##  [9] cli_2.0.2         withr_2.2.0       htmltools_0.5.0   remotes_2.1.1    
+## [13] yaml_2.2.1        digest_0.6.25     assertthat_0.2.1  rprojroot_1.3-2  
+## [17] crayon_1.3.4      bookdown_0.20     processx_3.4.2    callr_3.4.3      
+## [21] ps_1.3.3          curl_4.3          glue_1.4.2        evaluate_0.14    
+## [25] rmarkdown_2.3     compiler_4.0.2    backports_1.1.8   prettyunits_1.1.1
+```
+
+### Error #1 
+
+``` 
+Quitting from lines 80-81 (Names-values.Rmd) 
+Error in library(lobstr) : there is no package called 'lobstr'
+```
+#### Solution #1:
+
+```{R}
+install.packages("lobstr")
+```
+
+### Error #2
+
+```
+Quitting from lines 96-103 (Functionals.Rmd) 
+Error in loadNamespace(name) : there is no package called 'emo'
+```
+
+#### Solution #2:
+
+```{R}
+remotes::install_github("hadley/emo")
+```
+
+### Error #3
+
+```
+Quitting from lines 5-7 (OO.Rmd) 
+Error in library(sloop) : there is no package called 'sloop'
+```
+
+#### Solution #3
+
+```{R}
+install.packages("sloop")
+```
+
+### Error #4
+
+```
+Quitting from lines 535-550 (R6.Rmd) 
+Error in (function (cond)  : 
+  error in evaluating the argument 'drv' in selecting a method for function 'dbConnect': there is no package called 'RSQLite'
+```
+
+#### Solution #4
+
+```{R}
+install.packages("RSQLite")
+```
+
+### Error #5
+
+```
+Quitting from lines 172-176 (OO-tradeoffs.Rmd) 
+Error in library(zeallot) : there is no package called 'zeallot'
+```
+
+#### Solution #5
+
+```{R}
+install.packages("zeallot")
+```
+
+### Error #6
+
+```
+Quitting from lines 38-40 (Perf-measure.Rmd) 
+Error in library(profvis) : there is no package called 'profvis'
+```
+
+#### Solution #6
+
+```{R}
+install.packages("profvis")
+```
